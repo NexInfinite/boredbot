@@ -3,8 +3,7 @@ import random
 import shlex
 from tokens import *
 from sql_commands import *
-
-TOKEN = TOKEN
+import os
 
 msg = ''
 
@@ -60,4 +59,4 @@ async def on_ready():
     await client.send_message(client.get_channel('447354418250121216'), msg)
     await client.change_presence(game=discord.Game(name='^help'))
 
-client.run(TOKEN)
+client.run(os.getenv('TOKEN'))
