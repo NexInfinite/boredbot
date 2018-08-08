@@ -41,7 +41,7 @@ async def on_ready():
     print(client.user.name)
     print('--------------')
     msg = f'```Hello, Im Bored bot v1.0.5, How bored are u?```'
-    await client.send_message(client.get_channel('447354418250121216'), msg)
+    await client.send_message(client.get_channel('412723545316261890'), msg)
     await client.change_presence(game=discord.Game(name='^help'))
 
 client.run(os.getenv('TOKEN'))
