@@ -23,7 +23,6 @@ async def on_message(message):
     
     if message.content.lower().startswith('^help'):
         user = '{0.author.mention}'.format(message)
-        split_message = shlex.split(message)
         msg = f'{user} the commands are ```{commands}```'
         await client.send_message(message.channel, msg)
           
@@ -35,7 +34,6 @@ async def on_message(message):
 
     if message.content.lower().startswith('^list_bored'):
         user = '{0.author.mention}'.format(message)
-        split_message = shlex.split(message)
         msg = f'{user} the bored messages are: ```{bordem_messages}```'
         await client.send_message(message.channel, msg)
 
