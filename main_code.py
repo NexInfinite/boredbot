@@ -26,8 +26,14 @@ async def on_message(message):
 
     if message.content.lower().startswith('^list_bored'):
         user = '{0.author.mention}'.format(message)
-        msg = f'{user} the bored messages are: ```{bordem_messages}```'
-        await client.send_message(message.channel, msg)
+        split_message = shlex.split(message)
+        if len(message) < 1:
+            msg = f'{user} the bored messages are: ```{bordem_messages}```'
+            await client.send_message(message.channel, msg)
+        if len(message) > 1 and len(message) < 3:
+            msg = f'{user} the item you chose from the bordem list is: {bordem_messages[split_message[1]]}'
+            await client.send_message(message.channel, msg)
+
 
 @client.event
 async def on_ready():
