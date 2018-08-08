@@ -9,24 +9,26 @@ msg = ''
 
 client = discord.Client()
 
-bordem_messages = ['Eat some food.', 'Dab on them haters.', 'Watch a movie.', "Watch nex's stream.", 'Do some launchpadding?',
-                   "Wouldn't you like to know weather boi!", "play a game", "yOu NeEd To WoKe", "watch tv!", "play OUTSIIIIIIDE",
-                   "play a boardgame", "listen to: agiauegbae LET THE GAMES BEGIN IS AMAZE"]
+bordem_messages = ['Eat some food.', 'Dab on them haters.', 'Watch a movie.', "Watch nex's stream.",
+                   'Do some launchpadding?',
+                   "Wouldn't you like to know weather boi!", "play a game", "yOu NeEd To WoKe", "watch tv!",
+                   "play OUTSIIIIIIDE",
+                   "play a boardgame"]
 
 commands = '^bored', '^list_bored'
+
 
 @client.event
 async def on_message(message):
     global msg
     if message.author == client.user:
         return
-    
+
     if message.content.lower().startswith('^help'):
         user = '{0.author.mention}'.format(message)
-        msg = f'{user} the commands are ```{commands[0:]}```'
+        msg = f'{user} the commands are ```{", ".join(commands)}```'
         await client.send_message(message.channel, msg)
-          
-      
+
     if message.content.lower().startswith('^bored'):
         user = '{0.author.mention}'.format(message)
         msg = f'{user}, This is what you can do to not be bored: {random.choice(bordem_messages)}'
@@ -34,9 +36,8 @@ async def on_message(message):
 
     if message.content.lower().startswith('^list_bored'):
         user = '{0.author.mention}'.format(message)
-        msg = f'{user} the bored messages are: ```{bordem_messages[0:]}```'
+        msg = f'{user} the bored messages are: ```{", ".join(bordem_messages)}```'
         await client.send_message(message.channel, msg)
-
 
 
 @client.event
