@@ -34,7 +34,7 @@ async def on_message(message):
 
     if message.content.lower().startswith('^list_bored'):
         user = '{0.author.mention}'.format(message)
-        msg = f'{user} the bored messages are: ```{bordem_messages[0:'
+        msg = f'{user} the bored messages are: ```{bordem_messages[0:]}```'
         await client.send_message(message.channel, msg)
 
 
