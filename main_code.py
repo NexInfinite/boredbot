@@ -9,9 +9,9 @@ msg = ''
 
 client = discord.Client()
 
-bordem_messages = ['Eat some food.', 'Dab on them haters.', 'Watch a movie.', "Watch nex's stream.",
-                   'Do some launchpadding?',
-                   "Wouldn't you like to know weather boi!", "play a game", "yOu NeEd To WoKe", "watch tv!",
+bordem_messages = ['Eat some food', 'Dab on them haters', 'Watch a movie', "Watch nex's stream",
+                   'Do some launchpadding',
+                   "Wouldn't you like to know weather boi", "play a game", "yOu NeEd To WoKe", "watch tv",
                    "play OUTSIIIIIIDE",
                    "play a boardgame"]
 
@@ -31,7 +31,7 @@ async def on_message(message):
 
     if message.content.lower().startswith('^bored'):
         user = '{0.author.mention}'.format(message)
-        msg = f'{user}, This is what you can do to not be bored: {random.choice(bordem_messages)}'
+        msg = f'{user}, This is what you can do to not be bored: {random.choice(bordem_messages)}.'
         await client.send_message(message.channel, msg)
 
     if message.content.lower().startswith('^list_bored'):
