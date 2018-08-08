@@ -24,16 +24,8 @@ async def on_message(message):
     if message.content.lower().startswith('^help'):
         user = '{0.author.mention}'.format(message)
         split_message = shlex.split(message)
-        if len(messgae) < 2:
-            msg = f'{user} the commands are ```{commands}```'
-            await client.send_message(message.channel, msg)
-        if len(message) > 2:
-            if split_message[1] == '^bored':
-                msg = f'{user}, just do ^bored to get a random answer from the list'
-                await client.send_message(message.channel, msg)
-            if split_message[1] == '^list_bored':
-                msg = f'{user}, ^list_bored gives you a list of all the answers for ^bored'
-                await client.send_message(message.channel, msg)
+        msg = f'{user} the commands are ```{commands}```'
+        await client.send_message(message.channel, msg)
           
       
     if message.content.lower().startswith('^bored'):
