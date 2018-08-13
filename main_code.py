@@ -31,7 +31,7 @@ async def on_message(message):
 
     if message.content.lower().startswith('^bored'):
         user = '{0.author.mention}'.format(message)
-        msg = f'{user}, This is what you can do to not be bored: {random.choice(bordem_messages)}.'
+        msg = f'{user}, {random.choice(bordem_messages)}.'
         await client.send_message(message.channel, msg)
 
     if message.content.lower().startswith('^list_bored'):
