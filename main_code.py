@@ -10,10 +10,11 @@ msg = ''
 client = discord.Client()
 
 bordem_messages = ['Eat some food', 'Dab on them haters', 'Watch a movie', "Watch nex's stream",
-                   'Do some launchpadding',
-                   "Wouldn't you like to know weather boi", "play a game", "yOu NeEd To WoKe", "watch tv",
-                   "play OUTSIIIIIIDE",
-                   "play a boardgame"]
+                   'Do some launchpadding', "Wouldn't you like to know weather boi", "play a game", 
+                   "yOu NeEd To WoKe", "watch tv", "play OUTSIIIIIIDE", "play a boardgame", 
+                   "watch small boi's stream Kappa", "talk", "Buy some bored squad merch (no plugs)",
+                   "http://nexinfinite.stream/projects.html *cough* *cough*, how did that get there", 
+                   "play some rocket league"]
 
 commands = '^bored', '^list_bored'
 
