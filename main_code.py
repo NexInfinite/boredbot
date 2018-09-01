@@ -43,7 +43,7 @@ async def on_message(message):
     if message.content.lower().startswith('^youtube_search'):
         user = '{0.author.mention}'.format(message)
         split_message = shlex.split(message.content)
-        api_key = os.gentenv('Dev')
+        api_key = os.getenv('Dev')
         joined_message = ' '.join(split_message[1:])
         search_text = joined_message.split(', ')
         finished = 0
